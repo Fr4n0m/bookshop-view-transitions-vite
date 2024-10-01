@@ -3,7 +3,7 @@ import App from './App';
 import BookDetail from './pages/[book]';
 import NotFound from './pages/404';
 
-function Main() {
+function Routee() {
   return (
     <Router>
       <Routes>
@@ -15,4 +15,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Routee;
