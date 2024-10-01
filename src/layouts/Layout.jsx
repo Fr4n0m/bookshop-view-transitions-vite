@@ -58,7 +58,11 @@ const Layout = ({ title, children }) => {
 
   return (
     <>
-		{children}
+   <div
+      className="fixed top-0 z-[-2] h-screen w-screen bg-[#7e00f31e] bg-[radial-gradient(#ffffff33_1px,#fff_1px)] bg-[size:20px_20px]"
+    >
+    </div>
+		  {children}
   	</>
   );
 };

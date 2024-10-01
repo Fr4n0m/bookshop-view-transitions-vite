@@ -91,9 +91,9 @@ const BookDetail = () => {
             <h1 className="text-5xl font-black mb-4 drop-shadow-lg">{info.title}</h1>
             <p className="text-lg mb-4">{info.description}</p>
             <p>
-              <strong>Autor:</strong>
+              <strong>Autor: </strong>
               <a
-                className="font-semibold text-gray-800 hover:underline"
+                className="font-semibold text-gray-800 hover:underline italic"
                 href="https://es.wikipedia.org/wiki/George_R._R._Martin"
               >
                 {info.author}
