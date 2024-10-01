@@ -1,7 +1,3 @@
 {
-    "routes": [
-      { "src": "/", "dest": "/" },
-      { "src": "/:book", "dest": "/" },
-      { "src": "/404", "dest": "/" }
-    ]
-  }
+    "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
+}
