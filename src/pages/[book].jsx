@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import { books } from '../data/books';
 import Footer from '../components/Footer'
@@ -6,13 +6,10 @@ import Footer from '../components/Footer'
 const BookDetail = () => {
   const { book } = useParams();
 
-  const navigate = useNavigate();
-
-
   const info = books.find((b) => b.id === book);
 
   if (!info) {
-    navigate('/404', { replace: true });
+    window.location.href = '/404';
     return null;
   }
 
@@ -44,16 +41,18 @@ const BookDetail = () => {
           </a>
 
           <h1
-            className="scale-75 font-black uppercase text-4xl md:text-5xl text-center py-8 px-4 text-nowrap"
-            style={{ viewTransitionName: 'book-title' }}
+              className="mt-8 mb-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap"
+              style={{ viewTransitionName: 'book-title' }}
           >
-            <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
-            <span className="block text-[67px] md:text-[107px]">Fran11799</span>
+              <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
+              <span className="block text-6xl md:text-[107px]">
+                Fran11799
+              </span>
           </h1>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
-          <div className="flex flex-col mb-10">
-            <div className="book-big -ml-2 md:-ml-0 scale-75 md:scale-100">
+          <div className="flex flex-col justify-center items-center gap-4 mb-10">
+            <div className="book-big scale-75 md:scale-100">
               <div className="book-cover">
                 <img
                   src={info.image}
@@ -69,7 +68,7 @@ const BookDetail = () => {
 
             <a
               href="#"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
               title={`Comprar por ${info.price} €`}
             >
               <svg

@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
 
-const BookComponent = ({ id, title, image, description, author, authorLink, price }) => {
+const BookComponent = ({ id, title, image, description, author, authorLink }) => {
   return (
-    <>
-      <a className="inline-block book scale-75 -ml-5 md:ml-2 md:scale-100" href={`/${id}`}>
+    <div className='flex flex-col justify-center items-center md:mb-10'>
+      <a
+        className="inline-block book mb-2 md:mb-5 scale-75 md:scale-110"
+        href={`/${id}`}
+      >
         <div className="book-cover">
           <img
             src={image}
@@ -17,9 +20,9 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
         <div className="book-inside"></div>
       </a>
 
-      <div className="bottom-0 left-0 p-2 -mt-10 md:mt-2 text-black">
+      <div className="bottom-0 text-center left-0 p-2 -mt-10 md:mt-2 text-black">
         <a href={`/${id}`}>
-          <h2 className="text-lg font-bold -mt-3 hover:text-black/70">{title}</h2>
+          <h2 className=" text-lg font-bold -mt-3 hover:text-black/70">{title}</h2>
         </a>
         <p className="text-sm mt-2 italic">{description}</p>
         <p className="text-sm mt-2 text-black">
@@ -28,11 +31,8 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
             {author}
           </a>
         </p>
-        <p className="text-3xl text-red-700 mt-2 font-bold font-serif drop-shadow-md shadow-red-950">
-          {price}€
-        </p>
       </div>
-    </>
+    </div>
   );
 };
 
