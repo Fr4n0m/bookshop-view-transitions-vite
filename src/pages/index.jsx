@@ -1,6 +1,7 @@
 import Layout from '../layouts/Layout';
 import Title from '../components/Title';
 import ListBooks from '../components/ListBooks';
+import Footer from '../components/Footer';
 
 const Bookstore = () => {
   return (
@@ -8,6 +9,7 @@ const Bookstore = () => {
       <main className="m-auto max-w-4xl">
         <Title />
         <ListBooks />
+        <Footer />
       </main>
     </Layout>
   );
