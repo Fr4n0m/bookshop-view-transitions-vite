@@ -41,7 +41,7 @@ const BookDetail = () => {
           </a>
 
           <h1
-              className="mt-8 mb-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap"
+              className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
               style={{ viewTransitionName: 'book-title' }}
           >
               <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
@@ -50,8 +50,9 @@ const BookDetail = () => {
               </span>
           </h1>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12 mt-4 md:mt-20 px-8">
-          <div className="flex flex-col justify-center items-center gap-4 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12
+        -mt-16 md:mt-20 px-8">
+          <div className="flex flex-col justify-center items-center md:gap-4 mb-10">
             <div className="book-big scale-75 md:scale-100">
               <div className="book-cover">
                 <img
@@ -86,7 +87,7 @@ const BookDetail = () => {
             </a>
           </div>
 
-          <aside className="mt-10 md:mt-0">
+          <aside className="md:mt-0">
             <h1 className="text-5xl font-black mb-4 drop-shadow-lg">{info.title}</h1>
             <p className="text-lg mb-4">{info.description}</p>
             <p>
