@@ -1,3 +1,6 @@
+![bookshop_1](https://github.com/user-attachments/assets/6ee214a1-db96-4929-a603-30c94862d4ad)
+![bookshop_2](https://github.com/user-attachments/assets/81528122-1478-457b-a1e5-0070cdf5dff9)
+
 # Bookshop View Transitions
 
 A demo project showcasing a bookshop website with smooth view transitions using Astro.
