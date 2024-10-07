@@ -39,4 +39,4 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 
 ## Web demo
 
-You can try the web demo at [https://bookshop-view-transitions.vercel.app/](https://bookshop-view-transitions.vercel.app/).
+You can try the web demo at [https://bookshop-view-transitions.vercel.app/](https://bookshop-view-transitions-vite.vercel.app/).
