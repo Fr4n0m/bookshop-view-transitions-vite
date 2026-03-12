@@ -15,14 +15,14 @@ const BookDetail = () => {
 
   return (
     <Layout title={`${info.title} | View Transitions Library`}>
-      <main className="m-auto max-w-4xl">
+      <main className="m-auto max-w-6xl px-4 pb-8">
         <header className="relative">
           <TransitionLink
             to="/"
-            className="fixed left-2 top-2 text-white bg-black hover:bg-blue-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-black dark:hover:bg-blue-950 dark:focus:ring-blue-800"
+            className="fixed left-3 top-3 z-20 inline-flex items-center rounded-full border border-black/10 bg-white/80 p-2 text-black shadow-sm backdrop-blur-sm transition hover:bg-white"
           >
             <svg
-              className="w-4 h-4 rotate-180"
+              className="h-4 w-4 rotate-180"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -40,17 +40,20 @@ const BookDetail = () => {
           </TransitionLink>
 
           <h1
-            className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
+            className="pt-8 text-center font-black uppercase leading-[0.9] text-black"
             style={{ viewTransitionName: 'book-title' }}
           >
-            <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">View Transitions</span>
-            <span className="block text-6xl md:text-[107px]">Library</span>
+            <span className="block text-[clamp(1.2rem,2.5vw,2rem)] tracking-[0.32em] text-black/60">
+              View Transitions
+            </span>
+            <span className="block bg-gradient-to-r from-black via-zinc-700 to-zinc-500 bg-clip-text pt-2 text-[clamp(2.8rem,8vw,6.6rem)] tracking-[0.04em] text-transparent">
+              Library
+            </span>
           </h1>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12
-        -mt-16 md:mt-20 px-8">
-          <div className="flex flex-col justify-center items-center md:gap-4 mb-10">
-            <div className="book-big scale-75 md:scale-100">
+        <section className="mt-8 grid grid-cols-1 gap-8 rounded-3xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:grid-cols-[360px_1fr] md:gap-10 md:p-8">
+          <div className="flex flex-col items-center gap-5">
+            <div className="book-big scale-[0.78] md:scale-100">
               <div className="book-cover">
                 <img
                   src={info.image}
@@ -66,12 +69,12 @@ const BookDetail = () => {
 
             <button
               type="button"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-black/30"
               title={`Buy for ${info.price} EUR`}
               aria-label={`Buy ${info.title} for ${info.price} euros`}
             >
               <svg
-                className="w-3.5 h-3.5 mr-2"
+                className="h-3.5 w-3.5"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -85,23 +88,26 @@ const BookDetail = () => {
             </button>
           </div>
 
-          <aside className="md:mt-0">
-            <h1 className="text-5xl font-black mb-4 drop-shadow-lg">{info.title}</h1>
-            <p className="text-lg mb-4">{info.description}</p>
-            <p>
-              <strong>Author: </strong>
+          <aside className="rounded-2xl border border-black/10 bg-white/75 p-6 shadow-sm md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/45">Book details</p>
+            <h2 className="mt-3 text-4xl font-black leading-tight text-black md:text-5xl">{info.title}</h2>
+            <p className="mt-5 text-base leading-relaxed text-black/70 md:text-lg">{info.description}</p>
+            <p className="mt-6 text-sm text-black/70 md:text-base">
+              <strong className="text-black">Author: </strong>
               <a
-                className="font-semibold text-gray-800 hover:underline italic"
+                className="font-semibold italic text-black transition hover:text-black/70"
                 href={info.authorLink}
+                target="_blank"
+                rel="noreferrer"
               >
                 {info.author}
               </a>
             </p>
-            <p className="text-5xl font-bold font-serif mt-10 text-red-700 drop-shadow-md shadow-red-950 mb-10">
+            <p className="mt-10 inline-block rounded-xl border border-red-200 bg-red-50 px-5 py-3 font-serif text-4xl font-bold text-red-700 md:text-5xl">
               {info.price} €
             </p>
           </aside>
-        </div>
+        </section>
 
         <Footer />
       </main>
