@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types';
 import TransitionLink from './TransitionLink';
 
-const BookComponent = ({ id, title, image, description, author, authorLink, price }) => {
+const BookComponent = ({
+  id,
+  title,
+  image,
+  description,
+  author,
+  authorLink,
+  price,
+  rating,
+  reviews,
+  stock,
+}) => {
   return (
     <div className='flex flex-col items-center md:mb-12'>
       <TransitionLink className="inline-block book mb-2 scale-[0.72] sm:scale-75 md:mb-5 md:scale-110 xl:scale-[1.18]" to={`/${id}`}>
@@ -18,7 +29,7 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="flex h-[210px] w-[215px] flex-col px-1 text-left text-black sm:w-[225px] md:w-[248px] xl:w-[266px]">
+      <div className="flex h-[226px] w-[215px] flex-col px-1 text-left text-black sm:w-[225px] md:w-[248px] xl:w-[266px]">
         <TransitionLink to={`/${id}`}>
           <h2
             className="h-[52px] text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70"
@@ -33,6 +44,9 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
           </h2>
         </TransitionLink>
         <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-black/45">Featured edition</p>
+        <p className="mt-1 text-xs font-semibold text-black/60">
+          {rating.toFixed(1)} ★ · {reviews.toLocaleString()} ratings
+        </p>
         <p
           className="mt-2 h-10 px-4 text-[13px] italic leading-5 text-black/70 md:px-5"
           style={{
@@ -56,7 +70,10 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
             {author}
           </a>
           </p>
-          <p className="whitespace-nowrap font-serif text-xl font-bold text-black/80">{price} €</p>
+          <div className="text-right">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/40">{stock}</p>
+            <p className="whitespace-nowrap font-serif text-xl font-bold text-black/80">{price} €</p>
+          </div>
         </div>
       </div>
     </div>
@@ -71,6 +88,9 @@ BookComponent.propTypes = {
   author: PropTypes.string.isRequired,
   authorLink: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  rating: PropTypes.number.isRequired,
+  reviews: PropTypes.number.isRequired,
+  stock: PropTypes.string.isRequired,
 };
 
 export default BookComponent;

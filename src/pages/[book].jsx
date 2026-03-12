@@ -103,6 +103,35 @@ const BookDetail = () => {
                 {info.author}
               </a>
             </p>
+            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Rating</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.rating.toFixed(1)} ★</p>
+              </div>
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Reviews</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.reviews.toLocaleString()}</p>
+              </div>
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Format</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.format}</p>
+              </div>
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Stock</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.stock}</p>
+              </div>
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Shipping</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.shipping}</p>
+              </div>
+              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Pages</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.pages}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs font-medium uppercase tracking-[0.16em] text-black/45">
+              ISBN {info.isbn}
+            </p>
             <div className="mt-10 flex items-end justify-between border-t border-black/10 pt-5">
               <span className="text-xs font-semibold uppercase tracking-[0.24em] text-black/45">Price</span>
               <p className="font-serif text-4xl font-bold leading-none text-black md:text-5xl">
