@@ -15,11 +15,11 @@ const BookDetail = () => {
 
   return (
     <Layout title={`${info.title} | View Transitions Library`}>
-      <main className="m-auto max-w-6xl px-4 pb-8">
+      <main className="m-auto w-full max-w-[1500px] px-4 pb-8 md:px-6 2xl:px-8">
         <header className="relative">
           <TransitionLink
             to="/"
-            className="fixed left-3 top-3 z-20 inline-flex items-center rounded-full border border-black/10 bg-white/80 p-2 text-black shadow-sm backdrop-blur-sm transition hover:bg-white"
+            className="fixed left-2 top-2 z-20 inline-flex items-center rounded-full border border-black/10 bg-white/80 p-2 text-black shadow-sm backdrop-blur-sm transition hover:bg-white md:left-4 md:top-4"
           >
             <svg
               className="h-4 w-4 rotate-180"
@@ -51,9 +51,9 @@ const BookDetail = () => {
             </span>
           </h1>
         </header>
-        <section className="mt-8 grid grid-cols-1 gap-8 rounded-3xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:grid-cols-[360px_1fr] md:gap-10 md:p-8">
+        <section className="mt-8 grid grid-cols-1 gap-8 rounded-3xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:mt-10 md:p-6 lg:grid-cols-[360px_1fr] lg:gap-10 lg:p-8 2xl:mt-12 2xl:gap-14">
           <div className="flex flex-col items-center gap-5">
-            <div className="book-big scale-[0.78] md:scale-100">
+            <div className="book-big scale-[0.74] sm:scale-[0.82] md:scale-[0.9] lg:scale-100">
               <div className="book-cover">
                 <img
                   src={info.image}
@@ -88,9 +88,9 @@ const BookDetail = () => {
             </button>
           </div>
 
-          <aside className="rounded-2xl border border-black/10 bg-white/75 p-6 shadow-sm md:p-8">
+          <aside className="rounded-2xl border border-black/10 bg-white/75 p-5 shadow-sm md:p-7 lg:p-8 2xl:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/45">Book details</p>
-            <h2 className="mt-3 text-4xl font-black leading-tight text-black md:text-5xl">{info.title}</h2>
+            <h2 className="mt-3 text-3xl font-black leading-tight text-black md:text-4xl xl:text-5xl">{info.title}</h2>
             <p className="mt-5 text-base leading-relaxed text-black/70 md:text-lg">{info.description}</p>
             <p className="mt-6 text-sm text-black/70 md:text-base">
               <strong className="text-black">Author: </strong>
