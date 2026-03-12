@@ -25,7 +25,17 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
           </h2>
         </TransitionLink>
         <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-black/45">Featured edition</p>
-        <p className="mt-2 min-h-14 px-4 text-[15px] italic leading-relaxed text-black/70 md:px-5 md:text-base">{description}</p>
+        <p
+          className="mt-2 h-10 px-4 text-[13px] italic leading-5 text-black/70 md:px-5"
+          style={{
+            display: '-webkit-box',
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+          }}
+        >
+          {description}
+        </p>
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-black/10 pt-3">
           <p className="text-sm text-black/80">
           By{' '}
