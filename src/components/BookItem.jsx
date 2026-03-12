@@ -29,10 +29,10 @@ const BookComponent = ({
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="flex h-[248px] w-[min(72vw,275px)] flex-col px-1 text-left text-black">
+      <div className="flex h-[214px] w-[clamp(150px,43vw,275px)] flex-col px-1 text-left text-black md:h-[248px]">
         <TransitionLink to={`/${id}`}>
           <h2
-            className="h-full text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70"
+            className="h-[42px] text-base font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70 md:h-[52px] md:text-lg"
             style={{
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -43,12 +43,12 @@ const BookComponent = ({
             {title}
           </h2>
         </TransitionLink>
-        <p className="mt-2 text-xs font-medium uppercase tracking-[0.18em] text-black/45">Featured edition</p>
-        <p className="mt-1 text-xs font-semibold text-black/60">
+        <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-black/45 md:mt-2 md:text-xs md:tracking-[0.18em]">Featured edition</p>
+        <p className="mt-1 text-[10px] font-semibold text-black/60 md:text-xs">
           {rating.toFixed(1)} ★ · {reviews.toLocaleString()} ratings
         </p>
         <p
-          className="mt-2 h-10 text-[13px] italic leading-5 text-black/70"
+          className="mt-1 h-8 text-[11px] italic leading-4 text-black/70 md:mt-2 md:h-10 md:text-[13px] md:leading-5"
           style={{
             display: '-webkit-box',
             WebkitLineClamp: 2,
@@ -58,8 +58,8 @@ const BookComponent = ({
         >
           {description}
         </p>
-        <div className="mt-2 flex items-start justify-between gap-2 border-t border-black/10 pt-3">
-          <p className="text-sm text-black/80">
+        <div className="mt-2 flex items-start justify-between gap-2 border-t border-black/10 pt-2 md:pt-3">
+          <p className="text-xs text-black/80 md:text-sm">
           By{' '}
           <a
             className="font-bold text-black transition hover:text-black/70 hover:underline"
@@ -71,8 +71,8 @@ const BookComponent = ({
           </a>
           </p>
           <div className="text-right">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/40">{stock}</p>
-            <p className="whitespace-nowrap font-serif text-xl font-bold text-black/80">{price} €</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-black/40 md:text-[11px] md:tracking-[0.16em]">{stock}</p>
+            <p className="whitespace-nowrap font-serif text-lg font-bold text-black/80 md:text-xl">{price} €</p>
           </div>
         </div>
       </div>

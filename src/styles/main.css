@@ -21,8 +21,8 @@ h3 {
 }
 
 .book {
-    width: min(275px, 72vw);
-    height: calc(min(275px, 72vw) * 1.5556);
+    width: clamp(150px, 43vw, 275px);
+    height: calc(clamp(150px, 43vw, 275px) * 1.5556);
     position: relative;
     text-align: center;
 }
