@@ -18,9 +18,17 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="w-[225px] px-1 text-left text-black md:w-[248px]">
+      <div className="flex h-[210px] w-[225px] flex-col px-1 text-left text-black md:w-[248px]">
         <TransitionLink to={`/${id}`}>
-          <h2 className="text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70">
+          <h2
+            className="h-[52px] text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70"
+            style={{
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
             {title}
           </h2>
         </TransitionLink>
@@ -36,7 +44,7 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
         >
           {description}
         </p>
-        <div className="mt-3 flex items-center justify-between gap-2 border-t border-black/10 pt-3">
+        <div className="mt-auto flex items-center justify-between gap-2 border-t border-black/10 pt-3">
           <p className="text-sm text-black/80">
           By{' '}
           <a
