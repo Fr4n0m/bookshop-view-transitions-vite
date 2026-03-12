@@ -43,13 +43,14 @@ const BookDetail = () => {
           </div>
 
           <h1
-            className="pt-8 text-center font-black uppercase leading-[0.9] text-black"
+            className="mt-5 text-center font-black uppercase leading-[0.9] text-black"
             style={{ viewTransitionName: 'book-title' }}
           >
-            <span className="block text-[clamp(1.2rem,2.5vw,2rem)] tracking-[0.32em] text-black/60">
-              View Transitions
+            <span className="block text-[clamp(1.5rem,3vw,2.25rem)] tracking-[0.32em] text-black/65">
+              <span className="block">View</span>
+              <span className="block">Transitions</span>
             </span>
-            <span className="block bg-gradient-to-r from-black via-zinc-700 to-zinc-500 bg-clip-text pt-2 text-[clamp(2.8rem,8vw,6.6rem)] tracking-[0.04em] text-transparent">
+            <span className="block bg-gradient-to-r from-black via-zinc-700 to-zinc-500 bg-clip-text pt-2 text-[clamp(3.2rem,11vw,7.4rem)] tracking-[0.04em] text-transparent">
               Library
             </span>
           </h1>
