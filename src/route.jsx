@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Bookstore from './pages/index';
+import Bookstore from './pages/home';
 import BookDetail from './pages/[book]';
 import NotFound from './pages/404';
 
