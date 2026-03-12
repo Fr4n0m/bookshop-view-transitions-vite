@@ -21,6 +21,7 @@ const BookDetail = () => {
             <TransitionLink
               to="/"
               className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-black/70 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-black"
+              style={{ viewTransitionName: 'title-badge' }}
             >
               <svg
                 className="h-3.5 w-3.5 rotate-180"
