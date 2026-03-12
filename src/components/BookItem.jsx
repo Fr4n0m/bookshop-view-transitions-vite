@@ -18,14 +18,14 @@ const BookComponent = ({ id, title, image, description, author, authorLink, pric
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="w-full max-w-[270px] px-1 text-left text-black md:max-w-[290px]">
+      <div className="w-[225px] px-1 text-left text-black md:w-[248px]">
         <TransitionLink to={`/${id}`}>
           <h2 className="text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70">
             {title}
           </h2>
         </TransitionLink>
         <p className="mt-3 text-xs font-medium uppercase tracking-[0.18em] text-black/45">Featured edition</p>
-        <p className="mt-2 min-h-14 text-[15px] italic leading-relaxed text-black/70 md:text-base">{description}</p>
+        <p className="mt-2 min-h-14 px-4 text-[15px] italic leading-relaxed text-black/70 md:px-5 md:text-base">{description}</p>
         <div className="mt-3 flex items-center justify-between gap-2 border-t border-black/10 pt-3">
           <p className="text-sm text-black/80">
           By{' '}
