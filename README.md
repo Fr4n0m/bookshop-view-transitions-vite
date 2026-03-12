@@ -1,6 +1,3 @@
-![bookshop_1](https://github.com/user-attachments/assets/6ee214a1-db96-4929-a603-30c94862d4ad)
-![bookshop_2](https://github.com/user-attachments/assets/81528122-1478-457b-a1e5-0070cdf5dff9)
-
 # Bookshop View Transitions (Vite + React)
 
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -21,6 +18,8 @@
 
 ### 📚 Descripción
 Demo de una tienda de libros con navegación entre páginas usando **View Transitions**, construida con **Vite + React**.
+
+![bookshop_1](public/images/readme/bookshop_1.webp)
 
 ### ✨ Características
 - Transiciones suaves entre Home y detalle de libro.
@@ -64,6 +63,8 @@ Las PRs son bienvenidas y se revisan con cariño.
 
 ### 📚 Overview
 A bookshop demo with page-to-page navigation powered by **View Transitions**, built with **Vite + React**.
+
+![bookshop_2](public/images/readme/bookshop_2.webp)
 
 ### ✨ Features
 - Smooth transitions between Home and Book Detail pages.
