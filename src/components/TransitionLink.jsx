@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { flushSync } from 'react-dom';
 
 const isModifiedEvent = (event) => {
   return event.metaKey || event.altKey || event.ctrlKey || event.shiftKey;
@@ -33,7 +34,11 @@ const TransitionLink = ({ to, replace = false, state, onClick, children, ...rest
       return;
     }
 
-    document.startViewTransition(navigateTo);
+    document.startViewTransition(() => {
+      flushSync(() => {
+        navigateTo();
+      });
+    });
   };
 
   return (
