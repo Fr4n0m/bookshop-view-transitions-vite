@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import { books } from '../data/books';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import TransitionLink from '../components/TransitionLink';
 
 const BookDetail = () => {
   const { book } = useParams();
@@ -9,17 +10,15 @@ const BookDetail = () => {
   const info = books.find((b) => b.id === book);
 
   if (!info) {
-    window.location.href = '/404';
-    return null;
+    return <Navigate to="/404" replace />;
   }
 
   return (
     <Layout title={`Libro ${info.title}`}>
       <main className="m-auto max-w-4xl">
         <header className="relative">
-          <a
-            href="/"
-            type="button"
+          <TransitionLink
+            to="/"
             className="fixed left-2 top-2 text-white bg-black hover:bg-blue-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-black dark:hover:bg-blue-950 dark:focus:ring-blue-800"
           >
             <svg
@@ -37,17 +36,15 @@ const BookDetail = () => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               ></path>
             </svg>
-            <span className="sr-only">Icon description</span>
-          </a>
+            <span className="sr-only">Volver al inicio</span>
+          </TransitionLink>
 
           <h1
-              className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
-              style={{ viewTransitionName: 'book-title' }}
+            className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
+            style={{ viewTransitionName: 'book-title' }}
           >
-              <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
-              <span className="block text-6xl md:text-[107px]">
-                Fran11799
-              </span>
+            <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
+            <span className="block text-6xl md:text-[107px]">Fran11799</span>
           </h1>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12
@@ -67,10 +64,11 @@ const BookDetail = () => {
               <div className="book-inside"></div>
             </div>
 
-            <a
-              href="#"
+            <button
+              type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
               title={`Comprar por ${info.price} €`}
+              aria-label={`Comprar ${info.title} por ${info.price} euros`}
             >
               <svg
                 className="w-3.5 h-3.5 mr-2"
@@ -84,7 +82,7 @@ const BookDetail = () => {
                 ></path>
               </svg>
               Comprar ahora
-            </a>
+            </button>
           </div>
 
           <aside className="md:mt-0">

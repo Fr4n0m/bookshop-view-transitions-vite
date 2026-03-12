@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types';
+import TransitionLink from './TransitionLink';
 
 const BookComponent = ({ id, title, image, description, author, authorLink }) => {
   return (
     <div className='flex flex-col justify-center items-center md:mb-10'>
-      <a
-        className="inline-block book mb-2 md:mb-5 scale-75 md:scale-110"
-        href={`/${id}`}
-      >
+      <TransitionLink className="inline-block book mb-2 md:mb-5 scale-75 md:scale-110" to={`/${id}`}>
         <div className="book-cover">
           <img
             src={image}
@@ -18,12 +16,12 @@ const BookComponent = ({ id, title, image, description, author, authorLink }) =>
           <div className="light"></div>
         </div>
         <div className="book-inside"></div>
-      </a>
+      </TransitionLink>
 
       <div className="bottom-0 text-center left-0 p-2 -mt-10 md:mt-2 text-black">
-        <a href={`/${id}`}>
+        <TransitionLink to={`/${id}`}>
           <h2 className=" text-lg font-bold -mt-3 hover:text-black/70">{title}</h2>
-        </a>
+        </TransitionLink>
         <p className="text-sm mt-2 italic">{description}</p>
         <p className="text-sm mt-2 text-black">
           By{' '}
