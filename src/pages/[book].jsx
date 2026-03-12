@@ -103,9 +103,13 @@ const BookDetail = () => {
                 {info.author}
               </a>
             </p>
-            <p className="mt-10 inline-block rounded-xl border border-red-200 bg-red-50 px-5 py-3 font-serif text-4xl font-bold text-red-700 md:text-5xl">
-              {info.price} €
-            </p>
+            <div className="mt-10 flex items-end justify-between border-t border-black/10 pt-5">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-black/45">Price</span>
+              <p className="font-serif text-4xl font-bold leading-none text-black md:text-5xl">
+                {info.price}
+                <span className="ml-1 text-2xl text-black/70 md:text-3xl">€</span>
+              </p>
+            </div>
           </aside>
         </section>
 
