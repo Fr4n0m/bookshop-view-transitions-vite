@@ -20,7 +20,7 @@ const BookDetail = () => {
           <div className="mb-3 flex justify-start pt-2 md:pt-4">
             <TransitionLink
               to="/"
-              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-black/70 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-black"
+              className="inline-flex items-center gap-2 rounded-md border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-black/70 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-black"
               style={{ viewTransitionName: 'title-badge' }}
             >
               <svg
@@ -54,7 +54,7 @@ const BookDetail = () => {
             </span>
           </h1>
         </header>
-        <section className="mt-8 grid grid-cols-1 gap-8 rounded-3xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:mt-10 md:p-6 lg:grid-cols-[360px_1fr] lg:gap-10 lg:p-8 2xl:mt-12 2xl:gap-14">
+        <section className="mt-8 grid grid-cols-1 gap-8 rounded-xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:mt-10 md:p-6 lg:grid-cols-[360px_1fr] lg:gap-10 lg:p-8 2xl:mt-12 2xl:gap-14">
           <div className="flex w-full flex-col gap-5 lg:items-center">
             <div
               className="book-big w-full lg:max-w-[350px]"
@@ -75,7 +75,7 @@ const BookDetail = () => {
 
             <button
               type="button"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-black/30"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-black/30"
               title={`Buy for ${info.price} EUR`}
               aria-label={`Buy ${info.title} for ${info.price} euros`}
             >
@@ -94,7 +94,7 @@ const BookDetail = () => {
             </button>
           </div>
 
-          <aside className="rounded-2xl border border-black/10 bg-white/75 p-5 shadow-sm md:p-7 lg:p-8 2xl:p-10">
+          <aside className="rounded-lg border border-black/10 bg-white/75 p-5 shadow-sm md:p-7 lg:p-8 2xl:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/45">Book details</p>
             <h2 className="mt-3 text-3xl font-black leading-tight text-black md:text-4xl xl:text-5xl">{info.title}</h2>
             <p className="mt-5 text-base leading-relaxed text-black/70 md:text-lg">{info.description}</p>
@@ -110,27 +110,27 @@ const BookDetail = () => {
               </a>
             </p>
             <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Rating</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.rating.toFixed(1)} ★</p>
               </div>
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Reviews</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.reviews.toLocaleString()}</p>
               </div>
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Format</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.format}</p>
               </div>
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Stock</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.stock}</p>
               </div>
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Shipping</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.shipping}</p>
               </div>
-              <div className="rounded-lg border border-black/10 bg-white/70 px-3 py-2">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Pages</p>
                 <p className="mt-1 text-sm font-semibold text-black">{info.pages}</p>
               </div>
