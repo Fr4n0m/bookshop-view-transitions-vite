@@ -5,8 +5,8 @@ import Footer from '../components/Footer';
 
 const Bookstore = () => {
   return (
-    <Layout title="Librería Fran11799">
-      <main className="m-auto max-w-4xl">
+    <Layout title="View Transitions Library">
+      <main className="m-auto w-full max-w-[1500px]">
         <Title />
         <ListBooks />
         <Footer />

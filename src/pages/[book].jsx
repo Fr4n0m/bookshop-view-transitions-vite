@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import Layout from '../layouts/Layout';
 import { books } from '../data/books';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
+import TransitionLink from '../components/TransitionLink';
 
 const BookDetail = () => {
   const { book } = useParams();
@@ -9,51 +10,57 @@ const BookDetail = () => {
   const info = books.find((b) => b.id === book);
 
   if (!info) {
-    window.location.href = '/404';
-    return null;
+    return <Navigate to="/404" replace />;
   }
 
   return (
-    <Layout title={`Libro ${info.title}`}>
-      <main className="m-auto max-w-4xl">
+    <Layout title={`${info.title} | View Transitions Library`}>
+      <main className="m-auto w-full max-w-[1500px] px-4 pb-8 md:px-6 2xl:px-8">
         <header className="relative">
-          <a
-            href="/"
-            type="button"
-            className="fixed left-2 top-2 text-white bg-black hover:bg-blue-950 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center mr-2 dark:bg-black dark:hover:bg-blue-950 dark:focus:ring-blue-800"
-          >
-            <svg
-              className="w-4 h-4 rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
+          <div className="mb-3 flex justify-start pt-2 md:pt-4">
+            <TransitionLink
+              to="/"
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-black/70 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-black"
+              style={{ viewTransitionName: 'title-badge' }}
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              ></path>
-            </svg>
-            <span className="sr-only">Icon description</span>
-          </a>
+              <svg
+                className="h-3.5 w-3.5 rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                ></path>
+              </svg>
+              Back
+            </TransitionLink>
+          </div>
 
           <h1
-              className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
-              style={{ viewTransitionName: 'book-title' }}
+            className="mt-5 text-center font-black uppercase leading-[0.9] text-black"
+            style={{ viewTransitionName: 'book-title' }}
           >
-              <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
-              <span className="block text-6xl md:text-[107px]">
-                Fran11799
-              </span>
+            <span className="block text-[clamp(1.5rem,3vw,2.25rem)] tracking-[0.32em] text-black/65">
+              <span className="block">View</span>
+              <span className="block">Transitions</span>
+            </span>
+            <span className="block bg-gradient-to-r from-black via-zinc-700 to-zinc-500 bg-clip-text pt-2 text-[clamp(3.2rem,11vw,7.4rem)] tracking-[0.04em] text-transparent">
+              Library
+            </span>
           </h1>
         </header>
-        <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12
-        -mt-16 md:mt-20 px-8">
-          <div className="flex flex-col justify-center items-center md:gap-4 mb-10">
-            <div className="book-big scale-75 md:scale-100">
+        <section className="mt-8 grid grid-cols-1 gap-8 rounded-xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:mt-10 md:p-6 lg:grid-cols-[360px_1fr] lg:gap-10 lg:p-8 2xl:mt-12 2xl:gap-14">
+          <div className="flex w-full flex-col gap-5 lg:items-center">
+            <div
+              className="book-big w-full lg:max-w-[350px]"
+              style={{ height: 'auto', aspectRatio: '350 / 550' }}
+            >
               <div className="book-cover">
                 <img
                   src={info.image}
@@ -67,13 +74,14 @@ const BookDetail = () => {
               <div className="book-inside"></div>
             </div>
 
-            <a
-              href="#"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
-              title={`Comprar por ${info.price} €`}
+            <button
+              type="button"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-black px-5 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800 focus:outline-none focus:ring-2 focus:ring-black/30"
+              title={`Buy for ${info.price} EUR`}
+              aria-label={`Buy ${info.title} for ${info.price} euros`}
             >
               <svg
-                className="w-3.5 h-3.5 mr-2"
+                className="h-3.5 w-3.5"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -83,29 +91,65 @@ const BookDetail = () => {
                   d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
                 ></path>
               </svg>
-              Comprar ahora
-            </a>
+              Buy now
+            </button>
           </div>
 
-          <aside className="md:mt-0">
-            <h1 className="text-5xl font-black mb-4 drop-shadow-lg">{info.title}</h1>
-            <p className="text-lg mb-4">{info.description}</p>
-            <p>
-              <strong>Autor: </strong>
+          <aside className="rounded-lg border border-black/10 bg-white/75 p-5 shadow-sm md:p-7 lg:p-8 2xl:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-black/45">Book details</p>
+            <h2 className="mt-3 text-3xl font-black leading-tight text-black md:text-4xl xl:text-5xl">{info.title}</h2>
+            <p className="mt-5 text-base leading-relaxed text-black/70 md:text-lg">{info.description}</p>
+            <p className="mt-6 text-sm text-black/70 md:text-base">
+              <strong className="text-black">Author: </strong>
               <a
-                className="font-semibold text-gray-800 hover:underline italic"
-                href="https://es.wikipedia.org/wiki/George_R._R._Martin"
+                className="font-semibold italic text-black transition hover:text-black/70"
+                href={info.authorLink}
+                target="_blank"
+                rel="noreferrer"
               >
                 {info.author}
               </a>
             </p>
-            <p className="text-5xl font-bold font-serif mt-10 text-red-700 drop-shadow-md shadow-red-950 mb-10">
-              {info.price} €
+            <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3">
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Rating</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.rating.toFixed(1)} ★</p>
+              </div>
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Reviews</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.reviews.toLocaleString()}</p>
+              </div>
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Format</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.format}</p>
+              </div>
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Stock</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.stock}</p>
+              </div>
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Shipping</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.shipping}</p>
+              </div>
+              <div className="rounded-md border border-black/10 bg-white/70 px-3 py-2">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-black/45">Pages</p>
+                <p className="mt-1 text-sm font-semibold text-black">{info.pages}</p>
+              </div>
+            </div>
+            <p className="mt-4 text-xs font-medium uppercase tracking-[0.16em] text-black/45">
+              ISBN {info.isbn}
             </p>
+            <div className="mt-10 flex items-end justify-between border-t border-black/10 pt-5">
+              <span className="text-xs font-semibold uppercase tracking-[0.24em] text-black/45">Price</span>
+              <p className="font-serif text-4xl font-bold leading-none text-black md:text-5xl">
+                {info.price}
+                <span className="ml-1 text-2xl text-black/70 md:text-3xl">€</span>
+              </p>
+            </div>
           </aside>
-        </div>
+        </section>
 
-        <Footer />
+        <Footer matchParentWidth />
       </main>
     </Layout>
   );

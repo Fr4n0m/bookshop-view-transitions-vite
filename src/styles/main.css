@@ -1,17 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --font-ui: 'Inter Tight', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Merriweather', Georgia, Times New Roman, serif;
+}
+
+html,
+body {
+    font-family: var(--font-ui);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+}
+
 .book {
-    width: 225px;
-    height: 350px;
+    width: clamp(150px, 43vw, 275px);
+    height: calc(clamp(150px, 43vw, 275px) * 1.5556);
     position: relative;
     text-align: center;
 }
 
 .book-big {
-    width: 350px;
-    height: 550px;
+    width: min(350px, 84vw);
+    height: calc(min(350px, 84vw) * 1.5714);
     position: relative;
     text-align: center;
 }
