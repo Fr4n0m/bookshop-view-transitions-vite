@@ -1,35 +1,24 @@
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="rounded-lg shadow m-10 bg-black/60 backdrop-blur-lg mt-16 mb-16">
-      <div className="m-10 p-4 md:flex md:items-center md:justify-between">
-        <span className="text-sm text-white/60 sm:text-center">
-          © {year}&nbsp;
-          <a
-            href="https://www.linkedin.com/in/francisco-jos%C3%A9-r-5b2181bb/"
-            className="hover:underline"
-          >
-            Francisco José Rodríguez Martínez
-          </a>.
-        </span>
-        <ul className="flex flex-wrap items-center mt-3 gap-4 text-sm font-medium text-white/60 sm:mt-0">
-          <li>
-            <a href="mailto:Fran11799@outlook.com" className="hover:underline">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://professional-portfolio-nine.vercel.app/"
-              className="hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Resume
-            </a>
-          </li>
-        </ul>
+    <footer className="mx-auto mt-12 mb-10 w-full max-w-4xl px-4">
+      <div className="flex flex-wrap items-center justify-center gap-4 rounded-md border border-black/10 bg-white/50 px-4 py-3 text-xs text-black/60 backdrop-blur-sm">
+        <a
+          href="https://github.com/Fr4n0m/bookshop-view-transitions-vite"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-black"
+        >
+          Open PRs on GitHub
+        </a>
+        <span className="text-black/30">|</span>
+        <a
+          href="https://codebyfran.es"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-black"
+        >
+          Fr4n0m
+        </a>
       </div>
     </footer>
   );
