@@ -17,27 +17,29 @@ const BookDetail = () => {
     <Layout title={`${info.title} | View Transitions Library`}>
       <main className="m-auto w-full max-w-[1500px] px-4 pb-8 md:px-6 2xl:px-8">
         <header className="relative">
-          <TransitionLink
-            to="/"
-            className="fixed left-2 top-2 z-20 inline-flex items-center rounded-full border border-black/10 bg-white/80 p-2 text-black shadow-sm backdrop-blur-sm transition hover:bg-white md:left-4 md:top-4"
-          >
-            <svg
-              className="h-4 w-4 rotate-180"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 10"
+          <div className="mb-3 flex justify-start pt-2 md:pt-4">
+            <TransitionLink
+              to="/"
+              className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/75 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-black/70 shadow-sm backdrop-blur-sm transition hover:bg-white hover:text-black"
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9"
-              ></path>
-            </svg>
-            <span className="sr-only">Back to home</span>
-          </TransitionLink>
+              <svg
+                className="h-3.5 w-3.5 rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                ></path>
+              </svg>
+              Back
+            </TransitionLink>
+          </div>
 
           <h1
             className="pt-8 text-center font-black uppercase leading-[0.9] text-black"
