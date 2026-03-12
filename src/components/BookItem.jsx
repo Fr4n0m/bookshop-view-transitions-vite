@@ -29,7 +29,7 @@ const BookComponent = ({
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="flex h-[236px] w-[min(68vw,250px)] flex-col px-1 text-left text-black">
+      <div className="flex h-[248px] w-[min(72vw,275px)] flex-col px-1 text-left text-black">
         <TransitionLink to={`/${id}`}>
           <h2
             className="h-full text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70"
