@@ -15,7 +15,7 @@ const BookComponent = ({
 }) => {
   return (
     <div className='flex flex-col items-center md:mb-12'>
-      <TransitionLink className="inline-block book mb-2 scale-[0.72] sm:scale-75 md:mb-5 md:scale-110 xl:scale-[1.18]" to={`/${id}`}>
+      <TransitionLink className="inline-block book mb-3 md:mb-5" to={`/${id}`}>
         <div className="book-cover">
           <img
             src={image}
@@ -29,7 +29,7 @@ const BookComponent = ({
         <div className="book-inside"></div>
       </TransitionLink>
 
-      <div className="flex h-[226px] w-[215px] flex-col px-1 text-left text-black sm:w-[225px] md:w-[248px] xl:w-[266px]">
+      <div className="flex h-[226px] w-[min(62vw,225px)] flex-col px-1 text-left text-black md:w-[248px] xl:w-[266px]">
         <TransitionLink to={`/${id}`}>
           <h2
             className="h-[52px] text-lg font-extrabold uppercase leading-tight tracking-wide text-black transition hover:text-black/70"
