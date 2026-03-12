@@ -1,45 +1,115 @@
 ![bookshop_1](https://github.com/user-attachments/assets/6ee214a1-db96-4929-a603-30c94862d4ad)
 ![bookshop_2](https://github.com/user-attachments/assets/81528122-1478-457b-a1e5-0070cdf5dff9)
 
-# Bookshop View Transitions
+# Bookshop View Transitions (Vite + React)
 
-A demo project showcasing a bookshop website with smooth view transitions using Astro.
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-0F172A?style=for-the-badge&logo=tailwindcss&logoColor=38BDF8)
+![View Transitions](https://img.shields.io/badge/View_Transitions-111827?style=for-the-badge&logo=googlechrome&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-## Features
+## 🌍 Quick Navigation
 
-- Smooth view transitions between pages using Astro's built-in view transition API
-- Responsive design for a great user experience on various devices
-- Simple and clean UI design
-- Demo data for books, including images, titles, authors, and prices
+- [🇪🇸 Español](#-español)
+- [🇬🇧 English](#-english)
 
-## Pages
+---
 
-- **Index:** A list of books with images, titles, and prices
-- **Book:** A detailed page for each book, including author and description
-- **404:** A custom 404 page for when a book is not found
+## 🇪🇸 Español
 
-## Components
+### 📚 Descripción
+Demo de una tienda de libros con navegación entre páginas usando **View Transitions**, construida con **Vite + React**.
 
-- **Layout:** A reusable layout component for all pages
-- **Title:** A component for displaying the title of the bookshop
-- **ListBooks:** A component for listing books on the index page
-- **Footer:** A component for displaying the footer on all pages
+### ✨ Características
+- Transiciones suaves entre Home y detalle de libro.
+- Responsive para móvil, tablet, desktop y pantallas grandes.
+- UI editorial con datos mock de tienda (rating, stock, formato, envío, ISBN, páginas).
+- Enfoque visual en cards y detalle de producto.
 
-## Technologies Used
+### 🧰 Tecnologías
+- React 18
+- Vite
+- React Router DOM
+- Tailwind CSS
+- API de View Transitions del navegador
 
-- **Astro:** A modern web framework for building fast, scalable websites
-- **HTML:** HyperText Markup Language for structuring content
-- **CSS:** Cascading Style Sheets for styling and layout
-- **JavaScript:** For adding interactivity and dynamic effects
+### 🚀 Ejecución local
+```bash
+npm install
+npm run dev
+```
 
-## License
+### 🧪 Scripts
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
 
-This project is licensed under the MIT License. See LICENSE for details.
+### 🤝 Contribuciones
+¿Quieres mejorar animaciones, UI o accesibilidad?
 
-## Contributing
+- Haz fork del repo.
+- Crea una rama con tu mejora.
+- Abre una PR con contexto y capturas.
 
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
+Las PRs son bienvenidas y se revisan con cariño.
 
-## Web demo
+---
 
-You can try the web demo at [https://bookshop-view-transitions.vercel.app/](https://bookshop-view-transitions-vite.vercel.app/).
+## 🇬🇧 English
+
+### 📚 Overview
+A bookshop demo with page-to-page navigation powered by **View Transitions**, built with **Vite + React**.
+
+### ✨ Features
+- Smooth transitions between Home and Book Detail pages.
+- Responsive layout for mobile, tablet, desktop, and large screens.
+- Editorial-style UI with mocked store metadata (rating, stock, format, shipping, ISBN, pages).
+- Strong visual focus on product cards and detail screens.
+
+### 🧰 Tech Stack
+- React 18
+- Vite
+- React Router DOM
+- Tailwind CSS
+- Browser View Transitions API
+
+### 🚀 Run locally
+```bash
+npm install
+npm run dev
+```
+
+### 🧪 Scripts
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
+
+### 🤝 Contributing
+Want to improve transitions, UI, or accessibility?
+
+- Fork the repository.
+- Create a feature branch.
+- Open a PR with context and screenshots.
+
+PRs are always welcome.
+
+---
+
+## 🌐 Live Demo
+[https://bookshop-view-transitions-vite.vercel.app/](https://bookshop-view-transitions-vite.vercel.app/)
+
+## 📄 License
+This project is licensed under the MIT License.
+
+---
+
+## 👨‍💻 Portfolio
+Fr4n0m: [https://codebyfran.es](https://codebyfran.es)
