@@ -142,7 +142,7 @@ const BookDetail = () => {
           </aside>
         </section>
 
-        <Footer />
+        <Footer matchParentWidth />
       </main>
     </Layout>
   );

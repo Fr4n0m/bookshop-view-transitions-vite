@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="px-4 pt-16 pb-14 text-center md:pt-20 md:pb-16">
+    <header className="px-4 pt-16 pb-14 text-center md:pt-26 md:pb-28">
       <span className="inline-block rounded-full border border-black/10 bg-white/70 px-4 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-black/60 backdrop-blur-sm">
         React Demo
       </span>
