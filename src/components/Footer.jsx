@@ -16,7 +16,7 @@ const Footer = () => {
         <ul className="flex flex-wrap items-center mt-3 gap-4 text-sm font-medium text-white/60 sm:mt-0">
           <li>
             <a href="mailto:Fran11799@outlook.com" className="hover:underline">
-              Contacto
+              Contact
             </a>
           </li>
           <li>
@@ -26,7 +26,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              CV
+              Resume
             </a>
           </li>
         </ul>

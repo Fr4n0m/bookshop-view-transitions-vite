@@ -14,7 +14,7 @@ const BookDetail = () => {
   }
 
   return (
-    <Layout title={`Libro ${info.title}`}>
+    <Layout title={`${info.title} | View Transitions Library`}>
       <main className="m-auto max-w-4xl">
         <header className="relative">
           <TransitionLink
@@ -36,15 +36,15 @@ const BookDetail = () => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               ></path>
             </svg>
-            <span className="sr-only">Volver al inicio</span>
+            <span className="sr-only">Back to home</span>
           </TransitionLink>
 
           <h1
             className="mt-8 font-black uppercase text-3xl md:text-5xl text-center py-8 px-4 text-nowrap scale-75"
             style={{ viewTransitionName: 'book-title' }}
           >
-            <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">Librería de</span>
-            <span className="block text-6xl md:text-[107px]">Fran11799</span>
+            <span className="tracking-[14.3px] ml-3 md:tracking-[28.9px] md:ml-7">View Transitions</span>
+            <span className="block text-6xl md:text-[107px]">Library</span>
           </h1>
         </header>
         <div className="grid grid-cols-1 md:grid-cols-[350px_1fr] gap-x-12
@@ -67,8 +67,8 @@ const BookDetail = () => {
             <button
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 justify-center w-full"
-              title={`Comprar por ${info.price} €`}
-              aria-label={`Comprar ${info.title} por ${info.price} euros`}
+              title={`Buy for ${info.price} EUR`}
+              aria-label={`Buy ${info.title} for ${info.price} euros`}
             >
               <svg
                 className="w-3.5 h-3.5 mr-2"
@@ -81,7 +81,7 @@ const BookDetail = () => {
                   d="M15 12a1 1 0 0 0 .962-.726l2-7A1 1 0 0 0 17 3H3.77L3.175.745A1 1 0 0 0 2.208 0H1a1 1 0 0 0 0 2h.438l.6 2.255v.019l2 7 .746 2.986A3 3 0 1 0 9 17a2.966 2.966 0 0 0-.184-1h2.368c-.118.32-.18.659-.184 1a3 3 0 1 0 3-3H6.78l-.5-2H15Z"
                 ></path>
               </svg>
-              Comprar ahora
+              Buy now
             </button>
           </div>
 
@@ -89,10 +89,10 @@ const BookDetail = () => {
             <h1 className="text-5xl font-black mb-4 drop-shadow-lg">{info.title}</h1>
             <p className="text-lg mb-4">{info.description}</p>
             <p>
-              <strong>Autor: </strong>
+              <strong>Author: </strong>
               <a
                 className="font-semibold text-gray-800 hover:underline italic"
-                href="https://es.wikipedia.org/wiki/George_R._R._Martin"
+                href={info.authorLink}
               >
                 {info.author}
               </a>
