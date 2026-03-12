@@ -54,8 +54,11 @@ const BookDetail = () => {
           </h1>
         </header>
         <section className="mt-8 grid grid-cols-1 gap-8 rounded-3xl border border-black/10 bg-white/60 p-4 shadow-[0_20px_70px_-30px_rgba(0,0,0,0.45)] backdrop-blur-sm md:mt-10 md:p-6 lg:grid-cols-[360px_1fr] lg:gap-10 lg:p-8 2xl:mt-12 2xl:gap-14">
-          <div className="flex flex-col items-center gap-5">
-            <div className="book-big scale-[0.74] sm:scale-[0.82] md:scale-[0.9] lg:scale-100">
+          <div className="flex w-full flex-col gap-5 lg:items-center">
+            <div
+              className="book-big w-full lg:max-w-[350px]"
+              style={{ height: 'auto', aspectRatio: '350 / 550' }}
+            >
               <div className="book-cover">
                 <img
                   src={info.image}
